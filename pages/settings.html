@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mi Tutor | Configuración</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="../dist/css/custom.css">
+</head>
+<body id="settings" class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
+    <div id="navbar"></div>
+    <div id="main-sidebar"></div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <h1 class="m-0 text-dark">Información básica</h1>
+            </div><!-- /.col -->
+            <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="../pages/home.html">Inicio</a></li>
+                <li class="breadcrumb-item active">Configuración</li>
+              </ol>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-4">
+                <input class="form-control" type="text" placeholder="Nombres" readonly>
+                <input class="form-control" type="text" placeholder="Correo institucional" readonly>
+                <input class="form-control" type="text" placeholder="Correo personal" readonly>
+                <input class="form-control" type="text" placeholder="Teléfono2/Celular2 Contacto" readonly>
+              </div>
+              <div class="col-md-4">
+                <input class="form-control" type="text" placeholder="Apellidos" readonly>
+                <input class="form-control" type="text" placeholder="Código" readonly>
+                <input class="form-control" type="text" placeholder="Ciudad residencia" readonly>
+                <input class="form-control" type="text" placeholder="Teléfono1/Celular1 Contacto" readonly>
+              </div>
+              <div class="col-md-4">
+                  <img id="prev-image-user" src="../dist/img/select-photo.jpg" alt="your image" />
+                  <input id="image-user" class="form-control" type="file" placeholder="Seleccionar imagen" onchange="readURL(this);" >
+              </div>
+              
+            <div class="col-12">
+                <hr/>
+              <div class="col-md-6">
+                <button type="button" class="btn btn-danger">Cancelar</button>
+                <button type="button" class="btn btn-success">Gurdar</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+    <div id="footer"></div>
+  </div>
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<script src="../plugins/moment/moment.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+
+<script src="../dist/js/main-content.js"></script>
+</body>
+</html>
