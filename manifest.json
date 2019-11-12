@@ -1,0 +1,53 @@
+{
+    "short_name": "Mi Tutor",
+    "name": "Mi Tutor !!",
+    "start_url": "index.html",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "dist/img/icons/Icon-72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "dist/img/icons/Icon-96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "dist/img/icons/Icon-96.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "dist/img/icons/Icon-144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "dist/img/icons/Icon-152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "dist/img/icons/Icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "dist/img/icons/Icon-192.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "dist/img/icons/Icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+      ]
+
+
+}

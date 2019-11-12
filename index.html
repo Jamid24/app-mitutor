@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" type="image/ico" href="dist/img/favicon.ico"/>
   <title>Mi Tutor | Iniciar sesión</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
@@ -15,8 +15,34 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/custom.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+      <!-- Android -->
+      <meta name="theme-color" content="#ffffff">
+      <!-- IOS -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+
+      <link rel="apple-touch-icon" href="dist/img/icons/Icon-192.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="dist/img/icons-ios/Icon-152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="dist/img/icons-ios/Icon-180.png">
+      <link rel="apple-touch-icon" sizes="167x167" href="dist/img/icons-ios/Icon-167.png">
+
+      <!-- iPhone X (1125px x 2436px) -->
+      <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" href="img/icons-ios/Icon-1024.png">
+      <!-- iPhone 8, 7, 6s, 6 (750px x 1334px) -->
+      <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" href="img/icons-ios/Icon-512.png">
+      <!-- iPhone 8 Plus, 7 Plus, 6s Plus, 6 Plus (1242px x 2208px) -->
+      <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3)" href="img/icons-ios/Icon-1024.png">
+      <!-- iPhone 5 (640px x 1136px) -->
+      <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="img/icons-ios/Icon-512.png">
+
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+      <meta name="apple-mobile-web-app-title" content="Mi Tutor!">
+
 </head>
 <body class="hold-transition login-page" style="background-color: #ffffff !important;">
 <div class="login-box" >
@@ -27,9 +53,9 @@
   <div class="card">
     <div class="card-body login-card-body" style="background-color: #eeeeee !important;">
 
-      <form action="../../index3.html" method="post">
+    <form id="formSignIn" name="formSignIn" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Código estudiante/profesor">
+          <input id="codeInstitution" name="codeInstitution" type="text" class="form-control" placeholder="Código estudiante/profesor" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -37,7 +63,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña">
+          <input id="passwordUser" name="passwordUser" type="password" class="form-control" placeholder="Contraseña" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -45,7 +71,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-            <select id="selectUniversity" name="selectUniversity" class="custom-select" placeholder="Institución educativa" >
+            <select id="selectUniversity" name="selectUniversity" class="custom-select" placeholder="Institución educativa" required>
                 <option value="1" selected>Universidad ECCI</option>
             </select>
             <div class="input-group-append">
@@ -57,9 +83,13 @@
         <div class="row">
           <!-- /.col -->
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
+            <button id="btn-signin" class="btn btn-primary btn-block btn-flat">Ingresar</button>
           </div>
           <!-- /.col -->
+        </div>
+        <div class="row">
+          <div id="msg-error-login" class="col-12 alert alert-danger" role="alert">
+          </div>
         </div>
       </form>
     </div>
@@ -69,11 +99,13 @@
 <!-- /.login-box -->
 
 <!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
+<script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>
+<script src="dist/js/adminlte.min.js"></script>
+<!--<script src="dist/js/app.js"></script>-->
+<script src="dist/js/main.js"></script>
 
 </body>
 </html>
