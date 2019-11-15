@@ -1,8 +1,13 @@
-const urlWs ='http://localhost/ws-basic-mi-tutor/controller/';
+
 $(function(){
   $('#formSignIn').on('submit', function (e) {
     e.preventDefault();
     processLogin();
+  });
+
+  $('#menu-final').click(function() {
+    e.preventDefault();
+    processLogout();
   });
 });
 
@@ -11,25 +16,28 @@ function processLogin(){
       url: urlWs+"LoginController.php?action=1",
       data:JSON.stringify( {
         "codePerson" : $("#codeInstitution").val()
-        ,"passPerson" : $("#passwordUser").val()
+        ,"passw" : $("#passwordUser").val()
         ,"idInstitution" : $("#selectUniversity").val()
       }),
       type: "POST",
       dataType: "json",
   })
    .done(function( data, textStatus, jqXHR ) {
+      console.log( data );
        if ( data.status !==200 ) {
          $('#msg-error-login').text(data.message);
          $('#msg-error-login').show();
-         console.log( data );
        }else{
          sessionStorage.clear();
-         sessionStorage.setItem("IUD", "ROGERS");
-         sessionStorage.setItem("NAMES", "ROGERS");
-         sessionStorage.setItem("SURNAMES", "ROGERS");
-         sessionStorage.setItem("MAILINS", "ROGERS");
-         sessionStorage.setItem("CODE", "ROGERS");
-         sessionStorage.setItem("CITY", "ROGERS");
+         sessionStorage.setItem("ID", data.id_user);
+         sessionStorage.setItem("IDPROFILE", data.id_profile);
+         sessionStorage.setItem("NAMES", data.names);
+         sessionStorage.setItem("SURNAMES", data.surnames);
+         sessionStorage.setItem("CODEUSER", data.code_user_institution);
+         sessionStorage.setItem("INSTITUTION", data.id_institution);
+         sessionStorage.setItem("MAILINSTI", data.email_institucional);
+         sessionStorage.setItem("MAILOWN", data.email_personal);
+         sessionStorage.setItem("PASSW", data.password);
          $(location).attr('href','pages/home.html');
        }
    })
@@ -40,4 +48,9 @@ function processLogin(){
            console.log( "La solicitud a fallado: " +  textStatus);
        }
   });
+}
+
+function processLogout(){
+  sessionStorage.clear();
+  location.href = urlRoot;
 }
