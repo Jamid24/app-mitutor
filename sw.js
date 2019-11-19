@@ -3,7 +3,7 @@ importScripts('dist/js/sw-utils.js');
 
 const STATIC_CACHE    = 'static-v1';
 const DYNAMIC_CACHE   = 'dynamic-v1';
-const INMUTABLE_CACHE = 'inmutable-v1';
+const INMUTABLE_CACHE = 'inmutable-v1_1';
 
 const APP_SHELL = [
     // '/',
@@ -62,12 +62,14 @@ const APP_SHELL_INMUTABLE = [
     'plugins/fullcalendar-daygrid/main.min.css',
     'plugins/fullcalendar-timegrid/main.min.css',
     'plugins/fullcalendar-bootstrap/main.min.css',
+    'plugins/sweetalert2/sweetalert2.min.css',
     'plugins/jquery/jquery.min.js',
     'plugins/jquery-ui/jquery-ui.min.js',
     'plugins/bootstrap/js/bootstrap.bundle.min.js',
     'plugins/fullcalendar-bootstrap/main.min.js',
     'plugins/fullcalendar/locales/es.js',
     'plugins/moment/moment.min.js',
+    'plugins/sweetalert2/sweetalert2.all.min.js',
     'dist/js/adminlte.min.js'
 ];
 

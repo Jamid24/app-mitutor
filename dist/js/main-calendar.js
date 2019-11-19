@@ -21,9 +21,9 @@ $(function () {
         right : 'dayGridMonth,timeGridWeek,timeGridDay'
       },
       editable  : true,
-      droppable : true // this allows things to be dropped onto the calendar !!! 
+      droppable : true // this allows things to be dropped onto the calendar !!!
       ,dateClick: function(info) {
-        $('#modalTutoria').modal('show');
+          getMatters();
         console.log(info);
       }
       , eventClick: function(info) {
@@ -43,3 +43,34 @@ $(function () {
       };
       calendar.addEvent( myEvent );
   })
+
+
+  function getMatters(){
+    $.ajax({
+        url: urlWs+"TutorialController.php?action=1",
+        data:JSON.stringify( {
+          "idUser" : sessionStorage.getItem('ID')
+        }),
+        type: "POST",
+        dataType: "json",
+    }).done(function( data, textStatus, jqXHR ) {
+         if ( data.status !==200 ) {
+           Swal.fire(
+              'Lo sentimos!',
+              data.message,
+              'warning'
+            );
+         }else{
+           $('#modalTutoria').modal('show');
+           console.log(data.data);
+           $("#tutorial-matter").html('');
+           data.data.forEach(function(item) {
+             $("#tutorial-matter").append('<option value="'+item.id_matter+'">'+item.name_matter+'</option>');
+          });
+         }
+     }).fail(function( jqXHR, textStatus, errorThrown ) {
+         if ( console && console.log ) {
+             console.log( "La solicitud a fallado: " +  textStatus);
+         }
+    });
+  }

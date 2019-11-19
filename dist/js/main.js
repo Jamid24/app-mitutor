@@ -5,10 +5,14 @@ $(function(){
     processLogin();
   });
 
-  $('#menu-final').click(function() {
-    e.preventDefault();
+  $(document).on("click", ".btn-exit", function() {
     processLogout();
   });
+
+  setTimeout(function(){
+    $('#info-user-name').html(sessionStorage.getItem('NAMES').split(' ', 1)+" "+sessionStorage.getItem('SURNAMES').split(' ', 1));
+  }, 500);
+
 });
 
 function processLogin(){
@@ -23,21 +27,20 @@ function processLogin(){
       dataType: "json",
   })
    .done(function( data, textStatus, jqXHR ) {
-      console.log( data );
        if ( data.status !==200 ) {
          $('#msg-error-login').text(data.message);
          $('#msg-error-login').show();
        }else{
          sessionStorage.clear();
-         sessionStorage.setItem("ID", data.id_user);
-         sessionStorage.setItem("IDPROFILE", data.id_profile);
-         sessionStorage.setItem("NAMES", data.names);
-         sessionStorage.setItem("SURNAMES", data.surnames);
-         sessionStorage.setItem("CODEUSER", data.code_user_institution);
-         sessionStorage.setItem("INSTITUTION", data.id_institution);
-         sessionStorage.setItem("MAILINSTI", data.email_institucional);
-         sessionStorage.setItem("MAILOWN", data.email_personal);
-         sessionStorage.setItem("PASSW", data.password);
+         sessionStorage.setItem("ID", data.data.id_user);
+         sessionStorage.setItem("IDPROFILE", data.data.id_profile);
+         sessionStorage.setItem("NAMES", data.data.names);
+         sessionStorage.setItem("SURNAMES", data.data.surnames);
+         sessionStorage.setItem("CODEUSER", data.data.code_user_institution);
+         sessionStorage.setItem("INSTITUTION", data.data.id_institution);
+         sessionStorage.setItem("MAILINSTI", data.data.email_institucional);
+         sessionStorage.setItem("MAILOWN", data.data.email_personal);
+         sessionStorage.setItem("PASSW", data.data.password);
          $(location).attr('href','pages/home.html');
        }
    })

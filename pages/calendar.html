@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../plugins/fullcalendar-daygrid/main.min.css">
   <link rel="stylesheet" href="../plugins/fullcalendar-timegrid/main.min.css">
   <link rel="stylesheet" href="../plugins/fullcalendar-bootstrap/main.min.css">
+  <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -98,9 +99,8 @@
           <div class="modal-body">
             <form id="form-tutoria">
               <div class="form-group">
-                <select class="custom-select custom-select-sm">
+                <select id="tutorial-matter" name="tutorial-matter" class="custom-select custom-select-sm">
                   <option value="" disabled selected>Seleccionar materia</option>
-                  <option value="1">Option 1</option>
                 </select>
               </div>
               <div class="form-group">
@@ -167,6 +167,7 @@
 <script src="../plugins/fullcalendar-interaction/main.min.js"></script>
 <script src="../plugins/fullcalendar-bootstrap/main.min.js"></script>
 <script src="../plugins/fullcalendar/locales/es.js"></script>
+<script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
 
 <script src="../dist/js/main-content.js"></script>
 <script src="../dist/js/main-calendar.js"></script>
