@@ -96,51 +96,57 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
+          <form id="form-tutorial">
           <div class="modal-body">
-            <form id="form-tutoria">
+              <input id="tutorial-id" name="tutorial-id" type="hidden" value="">
+              <input id="tutorial-date" name="tutorial-date" type="hidden" value="">
               <div class="form-group">
-                <select id="tutorial-matter" name="tutorial-matter" class="custom-select custom-select-sm">
+                <select id="tutorial-matter" name="tutorial-matter" class="custom-select custom-select-sm" required>
                   <option value="" disabled selected>Seleccionar materia</option>
                 </select>
               </div>
               <div class="form-group">
-                <select class="custom-select custom-select-sm">
-                  <option value="" disabled selected>Seleccionar instructor</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="custom-select custom-select-sm">
-                  <option value="" disabled selected>Seleccionar Tipo tutoría</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <select class="custom-select custom-select-sm">
+                <select id="tutorial-city" name="tutorial-city" class="custom-select custom-select-sm" required>
                   <option value="" disabled selected>Seleccionar Ciudad</option>
+                  <option value="1">Bogotá D.C.</option>
                 </select>
               </div>
               <div class="form-group">
-                <select class="custom-select custom-select-sm">
-                  <option value="" disabled selected>Seleccionar Lugar</option>
+                <select id="tutorial-sede" name="tutorial-sede" class="custom-select custom-select-sm" required>
+                  <option value="" disabled selected>Seleccionar Sede</option>
                 </select>
               </div>
               <div class="form-group">
-                <select class="custom-select custom-select-sm">
-                  <option value="" disabled selected>Seleccionar Ubicación</option>
+                <select id="tutorial-ubication" name="tutorial-ubication" class="custom-select custom-select-sm" required>
+                  <option value="" disabled selected>Seleccionar ubicación</option>
                 </select>
               </div>
               <div class="form-group">
-                <select class="custom-select custom-select-sm">
+                <select id="tutorial-quota" name="tutorial-quota" class="custom-select custom-select-sm" required>
+                  <option value="" disabled selected>Seleccionar cantidad estudiantes</option>
+                  <option value="1">1</option>
+                  <option value="3">2</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <select id="tutorial-hour" name="tutorial-hour" class="custom-select custom-select-sm" required>
                   <option value="" disabled selected>Seleccionar Hora</option>
+                  <option value="11:00">11:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="20:00">20:00</option>
                 </select>
               </div>
-            </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Agendar</button>
-            <button type="button" class="btn btn-success">Gurdar</button>
-            <button type="button" class="btn btn-danger">Eliminar</button>
+            <button id="btn-add-tutorial" type="submit" class="btn btn-success">Guardar</button>
+            <button id="btn-delete-tutorial"type="button" class="btn btn-danger">Eliminar</button>
           </div>
+          </form>
         </div>
       </div>
     </div>
