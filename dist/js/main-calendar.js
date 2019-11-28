@@ -35,7 +35,10 @@ $(function () {
 
     calendar.render();
     // $('#calendar').fullCalendar()
-
+    $('#container-tutor').hide();
+    if(sessionStorage.getItem('IDPROFILE')==1){
+      $('#container-tutor').show();
+    }
     $("#tutorial-city").change(function () {
       getOptionsSelect("#tutorial-sede", 2, this.value);
     });
@@ -46,8 +49,17 @@ $(function () {
 
     $('#form-tutorial').on('submit', function (e) {
       e.preventDefault();
-      alert('sss');
-      createTutorial(calendar);
+      if(sessionStorage.getItem('IDPROFILE')==1){
+        Swal.fire(
+           'Operación exitosa!',
+           'Se agendó correctamente la tutoría.',
+           'success'
+         );
+         addEventCalendar(calendar, Math.random(), $('#tutorial-matter :selected').text(), $('#tutorial-date').val(), $('#tutorial-date').val());
+         $('#modalTutoria').modal('hide');
+      }else{
+        createTutorial(calendar);
+      }
     });
 
 /*

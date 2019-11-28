@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="../plugins/sweetalert2/sweetalert2.min.css">
 
   <link rel="stylesheet" href="../dist/css/custom.css">
 
@@ -79,32 +80,35 @@
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
+          <form id="formSettings" name="formSettings" method="post">
           <div class="row">
               <div class="col-md-4">
-                <input class="form-control" type="text" placeholder="Nombres" readonly>
-                <input class="form-control" type="text" placeholder="Correo institucional" readonly>
-                <input class="form-control" type="text" placeholder="Correo personal" readonly>
-                <input class="form-control" type="text" placeholder="Teléfono2/Celular2 Contacto" readonly>
+                <input id="setting-id" name="setting-id" type="hidden" value="">
+                <input id="setting-names" name="setting-names" class="form-control" type="text" placeholder="Nombres" readonly>
+                <input id="setting-email1" name="setting-email1" class="form-control" type="text" placeholder="Correo institucional" readonly>
+                <input id="setting-email2" name="setting-email2" class="form-control" type="text" placeholder="Correo personal" >
+                <input id="setting-phone1" name="setting-phone1" class="form-control" type="text" placeholder="Teléfono2/Celular2 Contacto">
               </div>
               <div class="col-md-4">
-                <input class="form-control" type="text" placeholder="Apellidos" readonly>
-                <input class="form-control" type="text" placeholder="Código" readonly>
-                <input class="form-control" type="text" placeholder="Ciudad residencia" readonly>
-                <input class="form-control" type="text" placeholder="Teléfono1/Celular1 Contacto" readonly>
+                <input id="setting-lastname" name="setting-lastname" class="form-control" type="text" placeholder="Apellidos" readonly>
+                <input id="setting-codeUser" name="setting-codeUser" class="form-control" type="text" placeholder="Código" readonly>
+                <input id="setting-city" name="setting-city" class="form-control" type="text" placeholder="Ciudad residencia" readonly>
+                <input id="setting-phone2" name="setting-phone2" class="form-control" type="text" placeholder="Teléfono1/Celular1 Contacto" >
               </div>
               <div class="col-md-4">
                   <img id="prev-image-user" src="../dist/img/select-photo.jpg" alt="your image" />
-                  <input id="image-user" class="form-control" type="file" placeholder="Seleccionar imagen" onchange="readURL(this);" >
+                  <input id="image-user" name="image-user" class="form-control" type="file" placeholder="Seleccionar imagen" onchange="readURL(this);" >
               </div>
 
             <div class="col-12">
                 <hr/>
               <div class="col-md-6">
                 <button type="button" class="btn btn-danger">Cancelar</button>
-                <button type="button" class="btn btn-success">Gurdar</button>
+                <button type="submit" class="btn btn-success">Guardar</button>
               </div>
             </div>
           </div>
+        </form>
         </div><!-- /.container-fluid -->
       </section>
       <!-- /.content -->
@@ -126,12 +130,14 @@
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- Tempusdominus Bootstrap 4 -->
 <script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<script src="../plugins/sweetalert2/sweetalert2.all.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
 
 <script src="../dist/js/main-content.js"></script>
+<script src="../dist/js/main-settings.js"></script>
 <script src="../dist/js/main.js"></script>
 <script src="../dist/js/app.js"></script>
 <script>
